@@ -1,0 +1,28 @@
+{
+  "url": "http://www.example.local",
+  "paths": {
+    "bower": "vendor/bower",
+    "views": "resources/views/",
+    "src": {
+      "root": "resources/assets/",
+      "js": "resources/assets/js/",
+      "sass": "resources/assets/sass/",
+      "images": "resources/assets/images/"
+    },
+    "dist": {
+      "root": "public/",
+      "js": "public/js/",
+      "css": "public/css/",
+      "images": "public/images/"
+    }
+  },
+  "modulizr": [
+    "cssclasses",
+    "svg"
+  ],
+  "autoprefixer": {
+    "browsers": ["> 1% in ZA", "last 5 versions", "Firefox ESR", "Opera 12.1"],
+    "cascade": true,
+    "remove": true
+  }
+}
