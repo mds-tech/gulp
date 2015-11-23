@@ -11,7 +11,7 @@ var gulp         = require('gulp'),
 
 var production = argv.production;
 
-gulp.task('sass', function () {
+gulp.task('_sass', function () {
   var stream = gulp.src('./resources/assets/sass/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', handleErrors))

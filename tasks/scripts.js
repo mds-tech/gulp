@@ -5,7 +5,7 @@ var gulp   = require('gulp'),
     concat = require('gulp-concat-json2js'),
     path   = global.config.paths;
 
-gulp.task('scripts', ['custom-scripts', 'vendor-scripts']);
+gulp.task('_scripts', ['custom-scripts', 'vendor-scripts']);
 
 // Task custom-scripts
 gulp.task('custom-scripts', function() {

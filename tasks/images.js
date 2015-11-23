@@ -5,7 +5,7 @@ var gulp         = require('gulp'),
     handleErrors = require('../util/handleErrors'),
     path         = global.config.paths;
 
-gulp.task('images', ['imagesCompress', 'imagesConvert']);
+gulp.task('_images', ['imagesCompress', 'imagesConvert']);
 
 gulp.task('imagesConvert', function () {
   return gulp.src(path.src.images + '**/*.svg')
