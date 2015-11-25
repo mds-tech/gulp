@@ -21,7 +21,8 @@ gulp.task('custom-scripts', function() {
 
 // Task vendor-scripts
 gulp.task('vendor-scripts', function() {
-  gulp.src(path.src.js+'vendor/**.json')
+  var src = path.src.vendorJs || path.src.js+'vendor/';
+  gulp.src(src+'**.json')
     .pipe(concat())
     .pipe(uglify())
     .pipe(rename({suffix:'.min'}))
