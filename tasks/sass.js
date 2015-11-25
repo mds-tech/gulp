@@ -12,7 +12,7 @@ var gulp         = require('gulp'),
 var production = argv.production;
 
 gulp.task('_sass', function () {
-  var stream = gulp.src('./resources/assets/sass/**/*.scss')
+  var stream = gulp.src(path.src.sass+'**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', handleErrors))
     .pipe(prefix(global.config.autoprefixer))
