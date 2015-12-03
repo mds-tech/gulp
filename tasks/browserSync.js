@@ -3,7 +3,7 @@ var gulp        = require('gulp'),
     argv        = require('yargs').argv,
     path        = global.config.paths;
 
-var url = argv.url || path.url;
+var url = argv.url || global.config.url;
 
 gulp.task('browserSync', ['build'], function() {
   browserSync.init(
