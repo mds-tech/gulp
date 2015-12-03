@@ -5,6 +5,7 @@ var gulp   = require('gulp'),
     concat = require('gulp-concat-json2js'),
     path   = global.config.paths;
 
+gulp.task('scripts', ['_scripts']); // Gets overwritten by Elixir
 gulp.task('_scripts', ['custom-scripts', 'vendor-scripts']);
 
 // Task custom-scripts

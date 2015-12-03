@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     path = global.config.paths;
 
+gulp.task('watch', ['watcher']); // Gets overwritten by Elixir
 gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(path.src.js+'**/*', ['custom-scripts']);
   gulp.watch(path.bower+'**/*', ['vendor-scripts']);

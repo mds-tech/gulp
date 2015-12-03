@@ -11,6 +11,7 @@ var gulp         = require('gulp'),
 
 var production = argv.production;
 
+gulp.task('sass', ['_sass']); // Gets overwritten by Elixir
 gulp.task('_sass', function () {
   var stream = gulp.src(path.src.sass+'**/*.scss')
     .pipe(sourcemaps.init())

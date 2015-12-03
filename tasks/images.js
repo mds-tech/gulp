@@ -5,6 +5,7 @@ var gulp         = require('gulp'),
     handleErrors = require('../util/handleErrors'),
     path         = global.config.paths;
 
+gulp.task('images', ['_images']); // Gets overwritten by Elixir
 gulp.task('_images', ['imagesCompress', 'imagesConvert']);
 
 gulp.task('imagesConvert', function () {
