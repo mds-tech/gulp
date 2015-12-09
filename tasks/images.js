@@ -2,6 +2,7 @@ var gulp         = require('gulp'),
     svg2png      = require('gulp-svg2png'),
     changed      = require('gulp-changed'),
     imagemin     = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
     handleErrors = require('../util/handleErrors'),
     path         = global.config.paths;
 
@@ -15,7 +16,7 @@ gulp.task('imagesConvert', function () {
     .pipe(
       imagemin({
         progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
       })
       .on('error', handleErrors)
     )
@@ -28,7 +29,7 @@ gulp.task('imagesCompress', function () {
     .pipe(
       imagemin({
         progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
       })
       .on('error', handleErrors)
     )
