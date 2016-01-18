@@ -4,7 +4,7 @@ This is our custom gulp configuration. If it works for you, great.
 
 * `cd project`
 * `git submodule add https://github.com/mds-tech/gulp`
-* `cp gulp/examples/* .`
+* `cp gulp/example/* .`
 
 Edit the gulp-config.json and .bower-sass-convert.sh
 
