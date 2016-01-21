@@ -1,13 +1,12 @@
-var gulp         = require('gulp'),
-    sass         = require('gulp-sass'),
-    rename       = require('gulp-rename'),
-    purge        = require('gulp-css-purge'),
-    minifycss    = require('gulp-minify-css'),
-    sourcemaps   = require('gulp-sourcemaps'),
-    prefix       = require('gulp-autoprefixer'),
-    handleErrors = require('../util/handleErrors'),
-    argv         = require('yargs').argv,
-    path         = global.config.paths;
+var gulp           = require('gulp'),
+    sass           = require('gulp-sass'),
+    rename         = require('gulp-rename'),
+    minifycss      = require('gulp-cssnano'),
+    sourcemaps     = require('gulp-sourcemaps'),
+    prefix         = require('gulp-autoprefixer'),
+    handleErrors   = require('../util/handleErrors'),
+    argv           = require('yargs').argv,
+    path           = global.config.paths;
 
 var production = argv.production;
 
@@ -19,11 +18,11 @@ gulp.task('_sass', function () {
     .pipe(prefix(global.config.autoprefixer))
     .pipe(rename({suffix: '.min'}));
 
-  if (production) {
-    stream.pipe(purge()).pipe(minifycss());
-  } else {
-    stream.pipe(sourcemaps.write('maps/'));
-  }
+	if (production != undefined) {
+		stream = stream.pipe(minifycss());
+	} else {
+		stream = stream.pipe(sourcemaps.write('maps/'));
+	}
 
   return stream.pipe(gulp.dest(path.dist.css));
 });
