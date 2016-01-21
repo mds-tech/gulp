@@ -18,11 +18,11 @@ gulp.task('_sass', function () {
     .pipe(prefix(global.config.autoprefixer))
     .pipe(rename({suffix: '.min'}));
 
-  if (production) {
-    stream.pipe(purge()).pipe(minifycss());
-  } else {
-    stream.pipe(sourcemaps.write('maps/'));
-  }
+	if (production != undefined) {
+		stream = stream.pipe(minifycss());
+	} else {
+		stream = stream.pipe(sourcemaps.write('maps/'));
+	}
 
   return stream.pipe(gulp.dest(path.dist.css));
 });
