@@ -7,7 +7,8 @@
       "root": "resources/assets/",
       "js": "resources/assets/js/",
       "sass": "resources/assets/sass/",
-      "images": "resources/assets/images/"
+      "images": "resources/assets/images/",
+      "icons": "resources/assets/images/icons/"
     },
     "dist": {
       "root": "public/",
@@ -15,6 +16,13 @@
       "css": "public/css/",
       "images": "public/images/"
     }
+  },
+  "icons": {
+    "sassPrefix": "$icons",
+    "jsonFilePath": "",
+    "jsonFileName": "icons.json",
+    "sassFilePath": "variables/",
+    "sassFileName": "icons.scss"
   },
   "modulizr": [
     "cssclasses",
