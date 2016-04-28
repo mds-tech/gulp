@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 gulp.task('watch', ['watcher']); // Gets overwritten by Elixir
 gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(path.src.js+'**/*', ['custom-scripts']);
+  gulp.watch(path.src.js+'**/vendor.json', ['vendor-scripts']);
   gulp.watch(path.bower+'**/*', ['vendor-scripts']);
   gulp.watch(path.src.sass+'**/*.scss', ['_sass']);
   gulp.watch(path.src.images+'icons/**/*.svg', ['iconsList']);
