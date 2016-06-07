@@ -21,6 +21,10 @@ gulp.task('typescript', function () {
   gulp.src('systemjs.config.js')
     .pipe(gulp.dest(path.dist.root, {overwrite: true}));
 
+  /** Copy over our html & css */
+  gulp.src(path.src.typeScript+"**/*.{html,css}")
+    .pipe(gulp.dest(path.dist.root, {overwrite: true}));
+
   return tsResult.js
     .pipe(sourceMaps.write("."))
     .pipe(gulp.dest(path.dist.typeScript));
