@@ -1,7 +1,7 @@
 var gulp           = require('gulp'),
     sass           = require('gulp-sass'),
     rename         = require('gulp-rename'),
-    minifycss      = require('gulp-cssnano'),
+    minifycss      = require('gulp-clean-css'),
     sourcemaps     = require('gulp-sourcemaps'),
     prefix         = require('gulp-autoprefixer'),
     handleErrors   = require('../util/handleErrors'),
@@ -19,7 +19,7 @@ gulp.task('_sass', function () {
     .pipe(rename({suffix: '.min'}));
 
 	if (production != undefined) {
-		stream = stream.pipe(minifycss());
+		stream = stream.pipe(minifycss({compatibility: 'ie8'}));
 	} else {
 		stream = stream.pipe(sourcemaps.write('maps/'));
 	}
