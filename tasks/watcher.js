@@ -11,4 +11,5 @@ gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(path.src.images+'icons/**/*.json', ['iconsSass']);
   gulp.watch(path.src.images+'**/*.svg', ['imagesConvert']);
   gulp.watch(path.src.images+'**/*', ['imagesCompress']);
+  gulp.watch(path.src.typeScript+'**/*.{html,ts}', ['typescript']);
 });
