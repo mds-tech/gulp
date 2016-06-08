@@ -5,7 +5,8 @@ var gulp        = require('gulp'),
   tsc           = require("gulp-typescript"),
   sourceMaps    = require('gulp-sourcemaps'),
   handleErrors  = require('../util/handleErrors'),
-  path          = global.config.paths;
+  path          = global.config.paths,
+  appName       = global.config.typeScript.appName;
 
 /**
  * Compile TypeScript sources and create source maps in build directory.
