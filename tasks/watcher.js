@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-    path = global.config.paths;
+    path = global.config.paths,
+    angularDistFolder = "angular/dist/";
 
 gulp.task('watch', ['watcher']); // Gets overwritten by Elixir
 gulp.task('watcher', ['browserSync'], function() {
@@ -11,4 +12,12 @@ gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(path.src.images+'icons/**/*.json', ['iconsSass']);
   gulp.watch(path.src.images+'**/*.svg', ['imagesConvert']);
   gulp.watch(path.src.images+'**/*', ['imagesCompress']);
+  gulp.watch(angularDistFolder+"**/*", {readDelay:1000}, ['watchAngularFiles'])
 });
+
+
+gulp.task('watchAngularFiles', function () {
+  gulp.src([(angularDistFolder + "**/*"), "!"+angularDistFolder+"**/*vendor"])
+  .pipe(gulp.dest('public/'));
+});
+
