@@ -11,6 +11,9 @@ gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(path.src.images+'icons/**/*.json', ['iconsSass']);
   gulp.watch(path.src.images+'**/*.svg', ['imagesConvert']);
   gulp.watch(path.src.images+'**/*', ['imagesCompress']);
-  gulp.watch([(path.dist.angular + "**/*"), "!"+path.dist.angular+"vendor/**/*"], {readDelay:1000}, ['copyAngularFiles']);
+  gulp.watch(
+    [(path.dist.angular + "**/*"), "!"+path.dist.angular+"vendor/**/*"],
+    { awaitWriteFinish: true, debounceDelay: 2000 },
+    ['copyAngularFiles']);
 });
 
