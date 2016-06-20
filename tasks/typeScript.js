@@ -1,9 +1,13 @@
 var gulp = require('gulp'),
+  changed = require('gulp-changed'),
   path = global.config.paths,
-  angularDistFolder = path.dist.angular;
+  angularDist = path.dist.angular,
+  dest = 'public/';
 
 gulp.task('_angular', ['copyAngularFiles']);
 gulp.task('copyAngularFiles', function () {
-  gulp.src([(angularDistFolder + "**/*"), "!"+angularDistFolder+"vendor/**/*"])
-    .pipe(gulp.dest('public/'));
+  gulp
+    .src([(angularDist + "**/*"), "!"+angularDist+"vendor/**/*"])
+    .pipe(changed(dest))
+    .pipe(gulp.dest(dest));
 });
