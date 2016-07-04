@@ -14,6 +14,5 @@ gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(
     [(path.dist.angular + "**/*"), "!"+path.dist.angular+"vendor/**/*"],
     { awaitWriteFinish: true, debounceDelay: 2000 },
-    ['copyAngularFiles']);
+    ['_angular']);
 });
-

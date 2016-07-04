@@ -4,8 +4,7 @@ var gulp = require('gulp'),
   angularDist = path.dist.angular,
   dest = 'public/';
 
-gulp.task('_angular', ['copyAngularFiles']);
-gulp.task('copyAngularFiles', function () {
+gulp.task('_angular', function () {
   gulp
     .src([(angularDist + "**/*"), "!"+angularDist+"vendor/**/*"])
     .pipe(changed(dest))
