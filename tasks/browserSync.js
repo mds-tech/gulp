@@ -7,7 +7,7 @@ var url = argv.url || global.config.url;
 
 gulp.task('browserSync', ['build'], function() {
   browserSync.init(
-    [path.dist.root+'**/*', path.views+'**'],
+    [path.dist.root+'**/*', path.views+'**', '!'+path.dist.root+'vendor/**/*'],
     { proxy: url, ui: false }
   );
 });

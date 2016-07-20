@@ -13,6 +13,6 @@ gulp.task('watcher', ['browserSync'], function() {
   gulp.watch(path.src.images+'**/*', ['imagesCompress']);
   gulp.watch(
     [(path.dist.angular + "**/*"), "!"+path.dist.angular+"vendor/**/*"],
-    { awaitWriteFinish: true, debounceDelay: 2000 },
+    { awaitWriteFinish: true, debounceDelay: 2000, ignore:"" },
     ['_angular']);
 });
