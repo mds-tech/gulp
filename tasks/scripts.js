@@ -10,7 +10,7 @@ gulp.task('_scripts', ['custom-scripts', 'vendor-scripts']);
 
 // Task custom-scripts
 gulp.task('custom-scripts', function() {
-  gulp.src(path.src.js+'*/**.json')
+  gulp.src([path.src.js+'main.json'])
     .pipe(concat())
     .pipe(jshint())
     .pipe(jshint.reporter())
@@ -23,7 +23,8 @@ gulp.task('custom-scripts', function() {
 // Task vendor-scripts
 gulp.task('vendor-scripts', function() {
   var src = path.src.vendorJs || path.src.js+'vendor/';
-  gulp.src(src+'*/**.json')
+  console.log(src);
+  gulp.src(src+'*.json')
     .pipe(concat())
     .pipe(uglify())
     .pipe(rename({suffix:'.min'}))
