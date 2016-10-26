@@ -23,7 +23,6 @@ gulp.task('custom-scripts', function() {
 // Task vendor-scripts
 gulp.task('vendor-scripts', function() {
   var src = path.src.vendorJs || path.src.js+'vendor/';
-  console.log(src);
   gulp.src(src+'*.json')
     .pipe(concat())
     .pipe(uglify())
